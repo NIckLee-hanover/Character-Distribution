@@ -73,14 +73,17 @@ for i in range(len(string2)):
     if string2[0] == '':
         del string2[0]
 string2 = list(reversed(string2))
+
 for i in range(len(string2)):
-    if len(string2[i]) == maxl:
+    while len(string2[i]) == maxl:
         current.append(string2[i])
+    current.sort()
+    for i in range(len(current)):
+        print(current[i])
     else:
-        break
-current.sort()
-for i in len(current):
-    print(current[i])
+        maxl -= 1
+
+
 print(current)
 print(string2)
 
