@@ -1,7 +1,7 @@
 """
 distribution.py
 Author: Nick Lee
-Credit: stackoverflow for 2 things so far
+Credit: stackoverflow for 5 things so far
 
 Assignment:
 
@@ -51,6 +51,9 @@ string1 = list(string1)
 lower =  string.ascii_lowercase
 upper =  string.ascii_uppercase
 string2 = list()
+current = list()
+
+
 for i in range(26):
     string2.append('')
 
@@ -63,8 +66,22 @@ maxl = 0
 for i in range(26):
     if len(string2[i]) > maxl:
         maxl = len(string2[i])
-print(maxl)
 
+string2.sort(key = len)
+
+for i in range(len(string2)):
+    if string2[0] == '':
+        del string2[0]
+string2 = list(reversed(string2))
+for i in range(len(string2)):
+    if len(string2[i]) == maxl:
+        current.append(string2[i])
+    else:
+        break
+current.sort()
+for i in len(current):
+    print(current[i])
+print(current)
 print(string2)
 
 
