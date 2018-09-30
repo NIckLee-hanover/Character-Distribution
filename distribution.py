@@ -53,16 +53,22 @@ upper =  string.ascii_uppercase
 string2 = list()
 for i in range(26):
     string2.append('')
-    
-    
-    
-    
+
 for i in range(26):
     amount = string1.count(lower[i])
     for j in (range(amount)):
         string2[i] = ("{0}{1}".format(string2[i], lower[i]))
-    
+
+maxl = 0
+for i in range(26):
+    if len(string2[i]) > maxl:
+        maxl = len(string2[i])
+print(maxl)
+
 print(string2)
+
+
+
 """
 for i in range(len(string1)): # string is now all lowercase
     for j in range(26):
