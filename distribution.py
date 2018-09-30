@@ -75,13 +75,15 @@ for i in range(len(string2)):
 string2 = list(reversed(string2))
 
 for i in range(len(string2)):
+    if maxl == 0:
+        break
     while len(string2[i]) == maxl:
         current.append(string2[i])
     current.sort()
     for i in range(len(current)):
         print(current[i])
-    else:
         maxl -= 1
+    
 
 
 print(current)
