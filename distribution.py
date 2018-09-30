@@ -44,30 +44,42 @@ Notice about this example:
 
 import string
 
+
 string1 = input("Please enter a string of text (the bigger the better): ")
 print ('The distribution of characters in "', str(string1), ". is:")
 string1 = list(string1)
 lower =  string.ascii_lowercase
 upper =  string.ascii_uppercase
-
-for i in range(len(string1)): # string is now all lowercase
-    letter = string1[i]
-    for j in range(26):
-        if letter == upper[j]:
-            string1[i] = lower[j]
-        string1[i] = str(j)
+string2 = list()
+for i in range(26):
+    string2.append('')
     
+    
+    
+    
+for i in range(26):
+    amount = string1.count(lower[i])
+    for j in (range(amount)):
+        string2[i] = ("{0}{1}".format(string2[i], lower[i]))
+    
+print(string2)
 """
-for i in range(len(string1)):
-    letter = string1[i]
+for i in range(len(string1)): # string is now all lowercase
     for j in range(26):
-        if letter == lower[j]:
-            string1[i] = str(j)
-"""
+        if string1[i] == upper[j]:
+            string1[i] = lower[j]
+
+for i in range(len(string1)):
+    for j in range(26):
+        if string1[i] == lower[j]:
+            string2[i] = "{0}{1}".format(string2[i],lower[j])
+
+
+
 string1 = ''.join(string1) # joins list back into string with the help of overflow
-
+print(string1.count('2'))
 print(str(string1)) 
-
+"""
 
 
 
