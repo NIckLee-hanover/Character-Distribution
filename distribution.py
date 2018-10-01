@@ -3,7 +3,7 @@ distribution.py
 Author: Nick Lee
 Credit: stackoverflow for 5 things so far
 
-Assignment:
+Assignment: Character distrbution
 
 Write and submit a Python program (distribution.py) that computes and displays 
 the distribution of characters in a given sample of text.
@@ -37,6 +37,15 @@ Notice about this example:
 * Letters that do not occur in the text are not listed in the output at all.
 """
 
+# i tihnk it should be noted that in post i don't understand some of what i wrote.
+"""
+1. order of operations:
+2. convert string to lower case
+3. count the amount of each character
+4. see what the max amount of one char is
+5. add each group of the same amount to a string and print the string in order
+6. decrese the max amount by one and repeat step 5
+"""
 import string
 
 
@@ -78,20 +87,19 @@ string2 = list(reversed(string2)) # reverses order... also not sure why
 
 numt = 0
 for i in range(len(string2)): # does the rest of the stuff 
+    if numt == len(string2):
+        break
     del current[:]
     while len(string2[numt]) == maxl: # adds all equal amounts of one character to a list
         current.append(string2[numt])
         numt += 1
         if numt == len(string2):
             break
+        
     current.sort()
     for i in range(len(current)): # prints list of each amount of character
         print(current[i])
     maxl -= 1
-
-
-print(current)
-print(string2)
 
 
 
