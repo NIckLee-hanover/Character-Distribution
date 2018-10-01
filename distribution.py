@@ -73,42 +73,22 @@ for i in range(len(string2)):
     if string2[0] == '':
         del string2[0]
 string2 = list(reversed(string2))
-
+numt = 0
 for i in range(len(string2)):
-    if maxl == 0:
-        break
-    while len(string2[i]) == maxl:
-        current.append(string2[i])
-        i += 1
+    del current[:]
+    while len(string2[numt]) == maxl:
+        current.append(string2[numt])
+        numt += 1
+        if numt == len(string2):
+            break
     current.sort()
     for i in range(len(current)):
         print(current[i])
     maxl -= 1
-    
 
 
 print(current)
 print(string2)
-
-
-
-"""
-for i in range(len(string1)): # string is now all lowercase
-    for j in range(26):
-        if string1[i] == upper[j]:
-            string1[i] = lower[j]
-
-for i in range(len(string1)):
-    for j in range(26):
-        if string1[i] == lower[j]:
-            string2[i] = "{0}{1}".format(string2[i],lower[j])
-
-
-
-string1 = ''.join(string1) # joins list back into string with the help of overflow
-print(string1.count('2'))
-print(str(string1)) 
-"""
 
 
 
