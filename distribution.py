@@ -79,10 +79,11 @@ for i in range(len(string2)):
         break
     while len(string2[i]) == maxl:
         current.append(string2[i])
+        i += 1
     current.sort()
     for i in range(len(current)):
         print(current[i])
-        maxl -= 1
+    maxl -= 1
     
 
 
