@@ -36,11 +36,6 @@ Notice about this example:
   in the text and they are listed in the output in alphabetical order.
 * Letters that do not occur in the text are not listed in the output at all.
 """
-# convert all text to lower case  //
-# asign each char a number
-# group numbers 
-# sort groups
-# sort groups again
 
 import string
 
@@ -54,35 +49,43 @@ string2 = list()
 current = list()
 
 
-for i in range(26):
+for i in range(26): # adds 26 blank spaces to string2
     string2.append('')
 
-for i in range(26):
+for i in range(len(string1)): # converts entire string to lower case
+    for j in range(26):
+        if string1[i] == upper[j]:
+            string1[i] = lower[j]
+            
+
+for i in range(26): # counts each letter and adds groups to string2
     amount = string1.count(lower[i])
     for j in (range(amount)):
         string2[i] = ("{0}{1}".format(string2[i], lower[i]))
 
 maxl = 0
-for i in range(26):
+for i in range(26): # finds the largest amount of one character
     if len(string2[i]) > maxl:
         maxl = len(string2[i])
 
-string2.sort(key = len)
+string2.sort(key = len) # sorts string2 by legnth
 
-for i in range(len(string2)):
+for i in range(len(string2)): # removes the blank spaces from string2... not sure why 
     if string2[0] == '':
         del string2[0]
-string2 = list(reversed(string2))
+string2 = list(reversed(string2)) # reverses order... also not sure why
+
+
 numt = 0
-for i in range(len(string2)):
+for i in range(len(string2)): # does the rest of the stuff 
     del current[:]
-    while len(string2[numt]) == maxl:
+    while len(string2[numt]) == maxl: # adds all equal amounts of one character to a list
         current.append(string2[numt])
         numt += 1
         if numt == len(string2):
             break
     current.sort()
-    for i in range(len(current)):
+    for i in range(len(current)): # prints list of each amount of character
         print(current[i])
     maxl -= 1
 
