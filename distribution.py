@@ -50,7 +50,7 @@ import string
 
 
 string1 = input("Please enter a string of text (the bigger the better): ")
-print ('The distribution of characters in "' + str(string1) + " is:")
+print ('The distribution of characters in "' + str(string1) + '" is:')
 string1 = list(string1)
 lower =  string.ascii_lowercase
 upper =  string.ascii_uppercase
